@@ -1,5 +1,7 @@
+# Import the "random" library
 import random
 
+# Define the sequence of random numbers; making sure the output is sorted and unique
 def generate_unique_random_numbers(amount, start, end):
     if amount > (end - start + 1):
         raise ValueError("The range is too small to generate the requested amount of unique numbers.")
@@ -7,10 +9,10 @@ def generate_unique_random_numbers(amount, start, end):
     random_numbers = random.sample(range(start, end + 1), amount)
     return sorted(random_numbers)
 
-# User inputs with validation
+# User inputs with error checking
 while True:
     try:
-        amount = int(input("Enter the number of unique random numbers to generate: "))
+        amount = int(input("Enter the number of unique random numbers you wish to generate: "))
         if amount <= 0:
             raise ValueError("The number of random numbers must be greater than 0.")
         start = int(input("Enter the starting range: "))
